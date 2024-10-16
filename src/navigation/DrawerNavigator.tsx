@@ -7,7 +7,9 @@ import {
 } from '@react-navigation/drawer';
 import Setting from '../screens/DrawerScreen/Setting';
 import TabNavigator from './TabNavigator';
-
+import StartScreen from '../screens/StartScreen';
+import DetailScreen from '../screens/TabScreen/DetailScreen';
+import OrderScreen from '../screens/TabScreen/OrderScreen';
 const Drawer = createDrawerNavigator();
 
 const CustomDrawerContent = (props: any) => {
@@ -25,8 +27,31 @@ const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
       drawerContent={props => <CustomDrawerContent {...props} />}>
-      <Drawer.Screen name="HomeTab" component={TabNavigator} />
-      <Drawer.Screen name="Setting" component={Setting} />
+      <Drawer.Screen
+        name="HomeTab"
+        component={TabNavigator}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name="StartScreen"
+        component={StartScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name="Setting"
+        component={Setting}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name="DetailScreen"
+        component={DetailScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name="OrderScreen"
+        component={OrderScreen}
+        options={{headerShown: false}}
+      />
     </Drawer.Navigator>
   );
 };
